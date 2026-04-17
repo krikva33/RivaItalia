@@ -6,6 +6,8 @@ const PRICES = {
   'Bordbooking': 16000,
 };
 
+const CHECKIN_BOOKING_URL = 'https://event.checkin.no/222479/17-mai-pa-sjoen';
+
 export default function OrderModal({ ticket, onClose }) {
   const [quantity, setQuantity] = useState(1);
   const [form, setForm] = useState({ name: '', email: '', phone: '' });
@@ -18,7 +20,7 @@ export default function OrderModal({ ticket, onClose }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
+    window.location.href = CHECKIN_BOOKING_URL;
   }
 
   return (

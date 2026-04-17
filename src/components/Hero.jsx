@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-cream" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-4xl flex-col justify-center px-6 pb-28 pt-20 text-center md:pb-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,9 +48,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="mt-10"
+          className="mt-16 md:mt-20"
         >
-          <a href="#tickets" className="btn-primary text-base md:text-lg !px-10 !py-4">
+          <a
+            href="#tickets"
+            className="inline-flex items-center justify-center rounded-full border-2 border-white/70 px-12 py-4 text-base font-semibold text-white shadow-[0_18px_50px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-gold md:text-lg"
+          >
             Sikre deg plass
           </a>
         </motion.div>
@@ -60,15 +63,15 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 md:bottom-8"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-            className="flex flex-col items-center gap-2"
+            className="flex flex-col items-center gap-2 px-5 py-3"
           >
-            <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
-            <svg className="w-5 h-5 text-gold/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <span className="text-white/75 text-xs tracking-[0.3em] uppercase">Scroll</span>
+            <svg className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </motion.div>

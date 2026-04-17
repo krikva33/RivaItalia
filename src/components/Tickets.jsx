@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import OrderModal from './OrderModal';
+import { useRef } from 'react';
+
+const CHECKIN_BOOKING_URL = 'https://event.checkin.no/222479/17-mai-pa-sjoen';
 
 const tickets = [
   {
@@ -17,7 +18,7 @@ const tickets = [
   },
   {
     name: 'Bordbooking',
-    price: '16 000,-',
+    price: '1 600,-',
     features: [
       'Alt i Standard inkludert',
       'Reservert bord for opptil 10 pers.',
@@ -31,11 +32,9 @@ const tickets = [
 export default function Tickets() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
-  const [selectedTicket, setSelectedTicket] = useState(null);
 
   return (
     <section id="tickets" className="bg-navy px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-32 relative overflow-hidden">
-      {selectedTicket && <OrderModal ticket={selectedTicket} onClose={() => setSelectedTicket(null)} />}
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(201,168,76,0.06)_0%,_transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,_rgba(201,168,76,0.04)_0%,_transparent_50%)]" />
@@ -81,7 +80,7 @@ export default function Tickets() {
               <div className="flex items-baseline gap-1 mb-8">
                 <span className="font-serif text-4xl md:text-5xl font-bold text-gold">{ticket.price}</span>
                 {ticket.name === 'Bordbooking' && (
-                  <span className="text-white/40 text-sm">/ bord for 10 pers.</span>
+                  <span className="text-white/40 text-sm">/ pers (gjelder 10 pers)</span>
                 )}
               </div>
 
@@ -97,7 +96,9 @@ export default function Tickets() {
               </ul>
 
               <button
-                onClick={() => setSelectedTicket(ticket)}
+                onClick={() => {
+                  window.location.href = CHECKIN_BOOKING_URL;
+                }}
                 className={`block w-full text-center font-semibold px-8 py-4 rounded-full tracking-wide uppercase text-sm transition-all duration-300 hover:-translate-y-0.5 ${
                   ticket.highlight
                     ? 'bg-gold text-white hover:bg-gold-light hover:shadow-lg hover:shadow-gold/25'
