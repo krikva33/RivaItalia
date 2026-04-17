@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-white/5 text-center">
           <p className="text-white/20 text-xs tracking-wide">
-            &copy; 2026 Riva Italia Events. Alle rettigheter reservert.
+            &copy; 2026 Riva Italia 135. Alle rettigheter reservert.
           </p>
         </div>
       </div>
