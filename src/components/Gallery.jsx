@@ -5,27 +5,27 @@ const images = [
   {
     src: '/images/IMG_3176.JPG',
     alt: 'Sunset boat party',
-    span: 'col-span-1 row-span-1',
+    ratio: 'aspect-[4/3]',
   },
   {
     src: '/images/IMG_3177.JPG',
     alt: 'DJ playing at sunset party',
-    span: 'col-span-1 row-span-2',
+    ratio: 'aspect-[3/4]',
   },
   {
     src: '/images/IMG_3179.JPG',
     alt: 'Ocean views',
-    span: 'col-span-1 row-span-1',
+    ratio: 'aspect-[4/3]',
   },
   {
     src: '/images/rivaitalia.webp',
     alt: 'Luxury yacht interior',
-    span: 'col-span-2 row-span-1',
+    ratio: 'aspect-[16/10]',
   },
   {
     src: '/images/IMG_3180.JPG',
     alt: 'Champagne celebration',
-    span: 'col-span-1 row-span-2',
+    ratio: 'aspect-[3/4]',
   },
 ];
 
@@ -51,19 +51,19 @@ export default function Gallery() {
         </motion.div>
 
         {/* Grid gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[250px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {images.map((img, i) => (
             <motion.div
               key={img.alt}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className={`${img.span} relative group overflow-hidden rounded-xl cursor-pointer`}
+              className={`${img.ratio} relative group overflow-hidden rounded-xl cursor-pointer`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute inset-0 border border-gold/0 group-hover:border-gold/30 rounded-xl transition-all duration-500" />
