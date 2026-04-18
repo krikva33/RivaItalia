@@ -125,18 +125,17 @@ export default function Tickets() {
           className="mt-14 md:mt-16 max-w-4xl mx-auto rounded-2xl border border-white/10 bg-white p-4 md:p-6"
         >
           <div id="checkin_registration" />
-          <p className="mt-4 text-center text-navy/50 text-xs md:text-sm">
-            Hvis bestillingsfeltet ikke lastes, bruk{' '}
+          <div className="mt-4 pt-3 border-t border-navy/10 text-center text-[11px] md:text-xs text-navy/45">
+            <span>Problemer med skjemaet?</span>{' '}
             <a
               href={CHECKIN_BOOKING_URL}
               target="_blank"
               rel="noreferrer"
-              className="text-navy underline underline-offset-2 hover:text-gold transition-colors"
+              className="font-medium text-navy/70 hover:text-gold transition-colors"
             >
-              direkte Checkin-lenke
+              Åpne bestilling direkte i Checkin
             </a>
-            .
-          </p>
+          </div>
         </motion.div>
 
         {/* Urgency note */}
