@@ -145,7 +145,7 @@ export default function Tickets() {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="text-center text-white/40 text-sm mt-10 tracking-wide"
         >
-          ⚡ Begrenset antall plasser. Billetter kan ikke refunderes.
+          ⚡ Begrenset antall plasser. Billetter kan ikke refunderes. 20 års aldersgrense.
         </motion.p>
       </div>
     </section>
