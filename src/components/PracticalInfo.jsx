@@ -38,7 +38,7 @@ const details = [
       </svg>
     ),
     label: 'Varighet',
-    value: '3 timer seiling',
+    value: '4 timer på sjøen',
   },
   {
     icon: (

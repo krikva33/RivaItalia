@@ -10,7 +10,7 @@ const tickets = [
     features: [
       'Velkomstdrink',
       'DJ & underholdning',
-      '3 timer seiling på Oslofjorden',
+      '4 timer på Oslofjorden',
       'Antipasti',
     ],
     cta: 'Kjøp billett',
