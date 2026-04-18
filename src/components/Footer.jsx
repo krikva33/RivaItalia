@@ -4,7 +4,7 @@ const footerContent = {
   kontakt: {
     title: 'Kontakt',
     sections: [
-      'Har du spørsmål om billetter, bordbooking eller arrangementet, kan du kontakte arrangøren direkte.',
+      'Har du spørsmål om billetter eller arrangementet, kan du kontakte arrangøren direkte.',
       'E-post: booking@rivaitalia.no',
       'Telefon: +47 41685000',
       'Instagram: @rivaitalia135',
@@ -13,10 +13,11 @@ const footerContent = {
   vilkar: {
     title: 'Vilkår',
     sections: [
-      'Kjøpte billetter og bordbooking er bindende og refunderes som hovedregel ikke.',
+      'Kjøpte billetter er bindende og refunderes som hovedregel ikke.',
+      'Aldersgrense for arrangementet er 20 år.',
       'Ved avlysning vil kjøper få informasjon om refusjon eller ombooking så snart som mulig.',
       'Arrangøren forbeholder seg retten til mindre endringer i program, tidspunkt og innhold dersom dette er nødvendig.',
-      'Bordbooking gjelder for opptil 10 personer og er kun gyldig når bestillingen er bekreftet av arrangør.',
+      'Billett er kun gyldig når bestillingen er bekreftet av arrangør.',
     ],
   },
   personvern: {

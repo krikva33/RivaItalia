@@ -24,7 +24,7 @@ const items = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: '3 timer på sjøen',
+    title: '4 timer på sjøen',
   },
   {
     icon: (
@@ -82,7 +82,7 @@ export default function Boat() {
             className="mb-12 md:mb-16 max-w-2xl mx-auto text-center"
           >
             <p className="text-navy/70 text-base md:text-lg leading-relaxed">
-              Kl. 12.00 går båten fra Tjuvholmen i Oslo. Ved ankomst blir du ønsket velkommen med en velkomstdrink, og DJ-en setter stemningen fra første stund. Deretter venter en tre timers cruise på Oslofjorden med musikk, sol og god atmosfære. Det serveres tapas om bord, og båten har tre barer med alle rettigheter.
+              Kl. 11.00 går båten fra Tjuvholmen i Oslo. Ved ankomst blir du ønsket velkommen med en velkomstdrink, og DJ-en setter stemningen fra første stund. Deretter venter en fire timers cruise på Oslofjorden med musikk, sol og god atmosfære. Det serveres tapas om bord, og båten har tre barer med alle rettigheter.
             </p>
           </motion.div>
 

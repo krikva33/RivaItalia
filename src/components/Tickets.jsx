@@ -1,37 +1,49 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const CHECKIN_BOOKING_URL = 'https://event.checkin.no/222479/17-mai-pa-sjoen';
 
 const tickets = [
   {
     name: 'Standard billett',
-    price: '1 500,-',
+    price: '1 800,-',
     features: [
       'Velkomstdrink',
       'DJ',
-      '3 timer på Oslofjorden',
-      'Tapasbuffet',
+      '4 timer på Oslofjorden',
+      'Antipasti',
     ],
     cta: 'Kjøp billett',
     highlight: false,
-  },
-  {
-    name: 'Bordbooking',
-    price: '1 600,-',
-    features: [
-      'Alt i Standard inkludert',
-      'Reservert bord for opptil 10 pers.',
-      '3 flasker italiensk prosecco',
-    ],
-    cta: 'Book bord',
-    highlight: true,
   },
 ];
 
 export default function Tickets() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+  useEffect(() => {
+    const existingScript = document.querySelector('script[src="https://registration.checkin.no/registration.loader.js"]');
+    if (existingScript) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://registration.checkin.no/registration.loader.js';
+    script.async = true;
+    script.setAttribute('data-event-id', '222479');
+    document.body.appendChild(script);
+  }, []);
+
+  function handleGoToRegistration() {
+    const registrationElement = document.getElementById('checkin_registration');
+    const embedLoaded = registrationElement && registrationElement.childElementCount > 0;
+
+    if (embedLoaded) {
+      registrationElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    window.location.href = CHECKIN_BOOKING_URL;
+  }
 
   return (
     <section id="tickets" className="bg-navy px-6 py-20 md:px-12 md:py-28 lg:px-20 lg:py-32 relative overflow-hidden">
@@ -57,7 +69,7 @@ export default function Tickets() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           {tickets.map((ticket, i) => (
             <motion.div
               key={ticket.name}
@@ -79,9 +91,6 @@ export default function Tickets() {
               <h3 className="font-serif text-2xl font-bold text-white mb-2">{ticket.name}</h3>
               <div className="flex items-baseline gap-1 mb-8">
                 <span className="font-serif text-4xl md:text-5xl font-bold text-gold">{ticket.price}</span>
-                {ticket.name === 'Bordbooking' && (
-                  <span className="text-white/40 text-sm">/ pers (gjelder 10 pers)</span>
-                )}
               </div>
 
               <ul className="space-y-4 mb-10">
@@ -96,9 +105,7 @@ export default function Tickets() {
               </ul>
 
               <button
-                onClick={() => {
-                  window.location.href = CHECKIN_BOOKING_URL;
-                }}
+                onClick={handleGoToRegistration}
                 className={`block w-full text-center font-semibold px-8 py-4 rounded-full tracking-wide uppercase text-sm transition-all duration-300 hover:-translate-y-0.5 ${
                   ticket.highlight
                     ? 'bg-gold text-white hover:bg-gold-light hover:shadow-lg hover:shadow-gold/25'
@@ -110,6 +117,27 @@ export default function Tickets() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.45, duration: 0.7 }}
+          className="mt-14 md:mt-16 max-w-4xl mx-auto rounded-2xl border border-white/10 bg-white p-4 md:p-6"
+        >
+          <div id="checkin_registration" />
+          <p className="mt-4 text-center text-navy/50 text-xs md:text-sm">
+            Hvis bestillingsfeltet ikke lastes, bruk{' '}
+            <a
+              href={CHECKIN_BOOKING_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="text-navy underline underline-offset-2 hover:text-gold transition-colors"
+            >
+              direkte Checkin-lenke
+            </a>
+            .
+          </p>
+        </motion.div>
 
         {/* Urgency note */}
         <motion.p
