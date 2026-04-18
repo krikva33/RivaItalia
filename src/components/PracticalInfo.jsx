@@ -19,6 +19,7 @@ const details = [
     ),
     label: 'Tid',
     value: '11:00 - 15:00',
+
   },
   {
     icon: (
@@ -37,7 +38,7 @@ const details = [
       </svg>
     ),
     label: 'Varighet',
-    value: '4 timer',
+    value: '3 timer seiling',
   },
   {
     icon: (

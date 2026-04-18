@@ -16,7 +16,7 @@ const items = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
       </svg>
     ),
-    title: 'DJ',
+    title: 'DJ & underholdning',
   },
   {
     icon: (
@@ -24,7 +24,7 @@ const items = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: '4 timer på sjøen',
+    title: '3 timer på sjøen',
   },
   {
     icon: (
@@ -41,14 +41,6 @@ const items = [
       </svg>
     ),
     title: 'Eksklusiv båt',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: 'Mulighet for bordbooking',
   },
 ];
 
@@ -82,7 +74,7 @@ export default function Boat() {
             className="mb-12 md:mb-16 max-w-2xl mx-auto text-center"
           >
             <p className="text-navy/70 text-base md:text-lg leading-relaxed">
-              Kl. 11.00 går båten fra Tjuvholmen i Oslo. Ved ankomst blir du ønsket velkommen med en velkomstdrink, og DJ-en setter stemningen fra første stund. Deretter venter en fire timers cruise på Oslofjorden med musikk, sol og god atmosfære. Det serveres antipasti om bord, og båten har tre barer med alle rettigheter.
+              Båten åpner kl. 11.00 ved Tjuvholmen i Oslo. Du ønskes velkommen med en velkomstdrink, og DJ-en setter stemningen mens gjestene samles om bord. Kl. 12.00 kaster vi loss og legger ut på en tre timers cruise på Oslofjorden. Nyt musikk, sol og god atmosfære mens det serveres antipasti om bord. Båten har tre barer med alle rettigheter.
             </p>
           </motion.div>
 
